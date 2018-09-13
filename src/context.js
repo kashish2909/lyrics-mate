@@ -4,14 +4,20 @@ const Context = React.createContext();
 
 export class provider extends Component {
     state = {
-
+        trackList: [
+          {track: {trackName: 'abc'}},
+          {track: {trackName: '123'}},
+        ],
+        heading: 'Top 10 Tracks'
     }
-    
+
     render() {
         return (
-            <Context.provider>
+            <Context.Provider value={this.state}>
                 {this.props.children}
-            </Context.provider>
+            </Context.Provider>
         )
     }
 }
+
+export const Consumer = Context.Consumer;
