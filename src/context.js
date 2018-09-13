@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 const Context = React.createContext();
 
-export class provider extends Component {
+export class Provider extends Component {
     state = {
-        trackList: [
-          {track: {trackName: 'abc'}},
-          {track: {trackName: '123'}},
-        ],
+        trackList: [],
         heading: 'Top 10 Tracks'
+    }
+
+    componentDidMount() {
+        axios.get(`http://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?page=1&page_size=10&country=uk&f_has_lyrics=1&apikey=${process.env.REACT_APP_MM_KEY}`)
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
     }
 
     render() {
