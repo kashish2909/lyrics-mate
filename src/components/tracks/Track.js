@@ -9,6 +9,7 @@ const track =  (props) => {
       <div className="card mb-4 shadow-sm">
         <div className="card-body">
           <h5>{track.track_name}</h5>
+          <hr />
           <p className="card-text">
             <strong><i className="fas fa-user"></i> Artist</strong>: {track.artist_name}
             <br/>
