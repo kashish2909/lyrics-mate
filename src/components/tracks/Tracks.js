@@ -8,11 +8,18 @@ class Tracks extends Component {
     return (
       <Consumer>
         {value => {
-          const { trackList } = value;
+          const { trackList, heading } = value;
           if (trackList === undefined || trackList.length === 0) {
             return <Spinner />
           } else {
-            return <h1>Tracks Loaded</h1>
+            return (
+             <React.Fragment>
+                <h3 className="text-center mb-4">{heading}</h3>
+                <div className="row">
+
+                </div>
+             </React.Fragment>
+            );
           }
         }}
       </Consumer>
