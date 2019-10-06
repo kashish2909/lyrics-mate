@@ -54,7 +54,7 @@ class Lyrics extends Component {
                             <strong>Genre</strong>: {track.primary_genres.music_genre_list[0].music_genre.music_genre_name}
                         </li>
                         <li className="list-group-item">
-                            <strong>Explicit</strong>: {track.explicit === 0 ? "No" : "Yes"}
+                            <strong>{track.explicit === 0 ? "" : "Explicit"}</strong>
                         </li>
                         <li className="list-group-item">
                             <strong>Release Date</strong>: <Moment format="DD/MM/YYYY">{track.first_release_date}</Moment>
